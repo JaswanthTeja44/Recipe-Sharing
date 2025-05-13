@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe ShareHub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-title">Recipe ShareHub</div>
+    <div class="header-categories">
+      <label style="color:white; font-weight:bold;">Filter by Category: </label>
+      <select id="headerCategoryFilter" onchange="filterRecipesFromHeader()">
+        <option value="">All</option>
+        <option value="Dessert">Dessert</option>
+        <option value="Main">Main Course</option>
+        <option value="Vegan">Vegan</option>
+      </select>
+    </div>
+  </header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#Categories">Categories</a>
+    <a href="#profile">My Profile</a>
+    <a href="#submit">Submit Recipe</a>
+  </nav>
+  <div class="container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search recipes..." />
+      <input type="text" id="ingredientFilter" placeholder="Filter by ingredients" />
+    </div>
+    <div id="recipes"></div>
+
+    <section id="submit" class="submit-form">
+      <h2>Submit a Recipe</h2>
+      <label>Title: <input type="text" id="newTitle" /></label>
+      <label>Category: 
+        <select id="newCategory">
+          <option value="Dessert">Dessert</option>
+          <option value="Main">Main Course</option>
+          <option value="Vegan">Vegan</option>
+        </select>
+      </label>
+      <label>Ingredients (comma-separated):
+        <input type="text" id="newIngredients" />
+      </label>
+      <label>Rating: <input type="number" step="0.1" max="5" id="newRating" /></label>
+      <label>Preparation Process:
+        <textarea id="newProcess" rows="4"></textarea>
+      </label>
+      <button onclick="submitRecipe()">Submit Recipe</button>
+    </section>
+  </div>
+  <footer>&copy;Recipe ShareHub. All rights reserved.</footer>
+  <script src="script.js">
+  </script>
+</body>
+</html>
